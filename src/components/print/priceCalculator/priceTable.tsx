@@ -10,7 +10,7 @@ const PriceTable: React.SFC<{
   rows: PrintPriceData[];
   overMaxQuantity?: boolean;
 }> = props => (
-  <Table compact striped>
+  <Table compact striped columns="2">
     <Table.Header>
       <TableRow>
         <Table.HeaderCell>Druh papíru</Table.HeaderCell>
