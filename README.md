@@ -1,0 +1,1 @@
+# sisky.cz website prototype
