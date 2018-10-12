@@ -6,6 +6,12 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     {
+      resolve: "gatsby-transformer-csv",
+      options: {
+        delimiter: "auto",
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "gatsby-starter-default",
@@ -21,6 +27,13 @@ module.exports = {
       resolve: "gatsby-plugin-typography",
       options: {
         pathToConfigModule: "src/utils/typography",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages/print`,
+        name: "print",
       },
     },
     "gatsby-plugin-offline",
