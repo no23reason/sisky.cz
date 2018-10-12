@@ -1,8 +1,11 @@
 import React from "react";
+import _ from "lodash";
 import { Dropdown, Form, Table, TableRow, Input } from "semantic-ui-react";
 
 import { PrintPriceData } from "../types";
 import Currency from "./currency";
+
+const MAX_QUANTITY = 150;
 
 type PrintTableProps = {
   rows: PrintPriceData[];
@@ -38,11 +41,28 @@ export default class PriceTable extends React.Component<
     quantity: 10,
   };
 
-  getData = () =>
-    this.props.rows.filter(
+  getData = (): PrintPriceData[] => {
+    if (!this.props.rows) {
+      return [];
+    }
+
+    const sizeRelevantData = this.props.rows.filter(
       r =>
         this.state.paperSize === r.paperSize && this.state.printType === r.sides
     );
+    const paperTypeGroups = _.groupBy(
+      sizeRelevantData,
+      d => `${d.paperSize};${d.paperType};${d.sides}`
+    );
+
+    return _.map(paperTypeGroups, g => {
+      const result = _.find(
+        _.orderBy(g, d => d.maxItems),
+        g => g.maxItems >= this.state.quantity
+      );
+      return result || _.minBy(g, d => d.price);
+    });
+  };
 
   render() {
     return (
@@ -78,6 +98,7 @@ export default class PriceTable extends React.Component<
                 onChange={(_, { value }) =>
                   this.setState({ quantity: parseInt(value as string, 10) })
                 }
+                min={1}
                 value={this.state.quantity}
               />
             </Form.Field>
@@ -95,6 +116,9 @@ export default class PriceTable extends React.Component<
               <Table.Row key={r.id}>
                 <Table.Cell>{r.paperType}</Table.Cell>
                 <Table.Cell textAlign="right">
+                  {this.state.quantity > MAX_QUANTITY
+                    ? "dohodou, maximálně "
+                    : ""}
                   <Currency amount={r.price} />
                 </Table.Cell>
               </Table.Row>
