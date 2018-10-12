@@ -65,7 +65,7 @@ export default class PriceTable extends React.Component<
               <Dropdown
                 selection
                 options={printTypes}
-                onChange={(e, { value }) =>
+                onChange={(_, { value }) =>
                   this.setState({ printType: value as string })
                 }
                 value={this.state.printType}
