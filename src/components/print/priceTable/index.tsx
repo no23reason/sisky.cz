@@ -18,9 +18,9 @@ type PrintTableState = {
 };
 
 const paperSizes = [
-  { text: "A4 (210 x 297 mm)", value: "A4" },
-  { text: "A3 (297 x 420 mm)", value: "A3" },
-  { text: "SRA3 (320 x 450 mm)", value: "SRA3" },
+  { text: "A4 (210 × 297 mm)", value: "A4" },
+  { text: "A3 (297 × 420 mm)", value: "A3" },
+  { text: "SRA3 (320 × 450 mm)", value: "SRA3" },
 ];
 
 const printTypes = [
