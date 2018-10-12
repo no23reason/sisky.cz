@@ -11,6 +11,7 @@ type PrintTableProps = {
 type PrintTableState = {
   paperSize: string;
   printType: string;
+  quantity: number;
 };
 
 const paperSizes = [
@@ -34,6 +35,7 @@ export default class PriceTable extends React.Component<
   state: PrintTableState = {
     paperSize: "A4",
     printType: "1/0",
+    quantity: 10,
   };
 
   getData = () =>
@@ -52,8 +54,8 @@ export default class PriceTable extends React.Component<
               <Dropdown
                 selection
                 options={paperSizes}
-                onChange={(e, d) =>
-                  this.setState({ paperSize: d.value as string })
+                onChange={(_, { value }) =>
+                  this.setState({ paperSize: value as string })
                 }
                 value={this.state.paperSize}
               />
@@ -63,15 +65,21 @@ export default class PriceTable extends React.Component<
               <Dropdown
                 selection
                 options={printTypes}
-                onChange={(e, d) =>
-                  this.setState({ printType: d.value as string })
+                onChange={(e, { value }) =>
+                  this.setState({ printType: value as string })
                 }
                 value={this.state.printType}
               />
             </Form.Field>
             <Form.Field>
               <label>Počet listů</label>
-              <Input type="number" />
+              <Input
+                type="number"
+                onChange={(_, { value }) =>
+                  this.setState({ quantity: parseInt(value as string, 10) })
+                }
+                value={this.state.quantity}
+              />
             </Form.Field>
           </Form.Group>
         </Form>
