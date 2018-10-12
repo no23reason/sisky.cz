@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, Form, Table, TableRow, Input } from "semantic-ui-react";
 
-import { PrintPriceData } from "./types";
+import { PrintPriceData } from "../types";
 import Currency from "./currency";
 
 type PrintTableProps = {
