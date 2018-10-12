@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "jsx": "preserve",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true
   }
 }
