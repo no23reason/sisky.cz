@@ -3,7 +3,7 @@ import _ from "lodash";
 import { Dropdown, Form, Table, TableRow, Input } from "semantic-ui-react";
 
 import Currency from "./currency";
-import { PrintPriceData } from "../../../pages/print/types";
+import { PrintPriceData } from "../../../types";
 
 const MAX_QUANTITY = 150;
 
