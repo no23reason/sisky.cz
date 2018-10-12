@@ -1,4 +1,4 @@
-import { PrintPriceData, PrintPriceDataRaw } from "./types";
+import { PrintPriceData, PrintPriceDataRaw } from "../types";
 
 const parseNumber = (value: string) => parseFloat(value.replace(/,/g, "."));
 

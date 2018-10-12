@@ -2,8 +2,8 @@ import React from "react";
 import _ from "lodash";
 import { Dropdown, Form, Table, TableRow, Input } from "semantic-ui-react";
 
-import { PrintPriceData } from "../types";
 import Currency from "./currency";
+import { PrintPriceData } from "../../../pages/print/types";
 
 const MAX_QUANTITY = 150;
 

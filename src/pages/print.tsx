@@ -1,10 +1,10 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import Layout from "../../components/layout";
-import PriceTable from "./priceTable";
-import { PrintPriceDataRaw } from "./types";
-import { parsePrintData } from "./utils";
+import Layout from "../components/layout";
+import { PrintPriceDataRaw } from "../types";
+import { parsePrintData } from "../utils/print";
+import PriceTable from "../components/print/priceTable/index";
 
 const Print = () => (
   <Layout>
