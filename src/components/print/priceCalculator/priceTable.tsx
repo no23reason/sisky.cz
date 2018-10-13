@@ -5,10 +5,15 @@ import { Table, TableRow } from "semantic-ui-react";
 import Currency from "./currency";
 
 import { PrintPriceData } from "../../../types";
+import {
+  getPaperTypeName,
+  getPrintPrice,
+  PRINT_CUSTOM_PRICE_LIMIT,
+} from "../../../utils/print";
 
 const PriceTable: React.SFC<{
   rows: PrintPriceData[];
-  overMaxQuantity?: boolean;
+  quantity: number;
 }> = props => (
   <Table compact striped columns="2">
     <Table.Header>
@@ -20,10 +25,12 @@ const PriceTable: React.SFC<{
     <Table.Body>
       {props.rows.map(r => (
         <Table.Row key={r.id}>
-          <Table.Cell>{r.paperType}</Table.Cell>
+          <Table.Cell>{getPaperTypeName(r.paperType)}</Table.Cell>
           <Table.Cell textAlign="right">
-            {props.overMaxQuantity ? "dohodou, maximálně " : ""}
-            <Currency amount={r.price} />
+            {props.quantity > PRINT_CUSTOM_PRICE_LIMIT
+              ? "dohodou, maximálně "
+              : ""}
+            <Currency amount={getPrintPrice(r, props.quantity)} />
           </Table.Cell>
         </Table.Row>
       ))}

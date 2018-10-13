@@ -17,9 +17,11 @@ const Print = () => (
                 id
                 paperSize
                 paperType
-                sides
-                maxItems
-                price
+                printType
+                max20
+                max49
+                max99
+                more
               }
             }
           }

@@ -1,12 +1,9 @@
 import React from "react";
-import _ from "lodash";
 
 import { PrintPriceData } from "../../../types";
 
 import PriceTableForm from "./priceTableForm";
 import PriceTable from "./priceTable";
-
-const MAX_QUANTITY = 150;
 
 type PriceCalculatorProps = {
   rows: PrintPriceData[];
@@ -49,20 +46,10 @@ export default class PriceCalculator extends React.Component<
 
     const sizeRelevantData = this.props.rows.filter(
       r =>
-        this.state.paperSize === r.paperSize && this.state.printType === r.sides
+        this.state.paperSize === r.paperSize &&
+        this.state.printType === r.printType
     );
-    const paperTypeGroups = _.groupBy(
-      sizeRelevantData,
-      d => `${d.paperSize};${d.paperType};${d.sides}`
-    );
-
-    return _.map(paperTypeGroups, g => {
-      const result = _.find(
-        _.orderBy(g, d => d.maxItems),
-        g => g.maxItems >= this.state.quantity
-      );
-      return result || _.minBy(g, d => d.price);
-    });
+    return sizeRelevantData;
   };
 
   render() {
@@ -79,7 +66,7 @@ export default class PriceCalculator extends React.Component<
           quantity={this.state.quantity}
         />
         <PriceTable
-          overMaxQuantity={this.state.quantity > MAX_QUANTITY}
+          quantity={this.state.quantity}
           rows={this.getData()}
         />
       </>
