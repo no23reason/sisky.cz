@@ -5,21 +5,21 @@
   "author": "Dan Homola <dan.homola@hotmail.cz>",
   "dependencies": {
     "gatsby": "^2.0.19",
+    "gatsby-plugin-less": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
-    "gatsby-plugin-typography": "^2.2.0",
     "gatsby-source-filesystem": "^2.0.3",
     "gatsby-transformer-csv": "^2.0.2",
+    "less": "2.7.3",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
     "semantic-ui-css": "^2.4.0",
-    "semantic-ui-react": "^0.82.5",
-    "typography": "^0.16.17",
-    "typography-theme-fairy-gates": "^0.15.11"
+    "semantic-ui-less": "^2.4.0",
+    "semantic-ui-react": "^0.82.5"
   },
   "keywords": [
     "gatsby"
