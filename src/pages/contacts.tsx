@@ -1,6 +1,5 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import { Header, Grid, Icon, List, Divider, Segment } from "semantic-ui-react";
+import { Header, Grid, List, Divider, Segment } from "semantic-ui-react";
 
 import Layout from "../components/layout";
 import ContactItem from "../components/contacts/contactItem";
@@ -43,6 +42,10 @@ const Contacts = () => (
                 content={<a href="tel:+420733579613 ">+420 733 579 613 </a>}
               />
               <List.Item
+                icon="mail"
+                content={<a href="mailto:tisk@sisky.cz">tisk@sisky.cz</a>}
+              />
+              <List.Item
                 icon="building"
                 content={
                   <>
@@ -57,6 +60,10 @@ const Contacts = () => (
                 content={
                   <a href="https://goo.gl/maps/jFj9Qm4DJgB2">Ukázat na mapě</a>
                 }
+              />
+              <List.Item
+                icon="clock"
+                content={<>pondělí – pátek: 8:00 – 16:00</>}
               />
             </List>
           </Segment>

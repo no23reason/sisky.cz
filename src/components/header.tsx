@@ -4,12 +4,11 @@ import { Link } from "gatsby";
 import { primary } from "../utils/colors";
 import { Container } from "semantic-ui-react";
 
-const Header = ({ height, marginBottom }) => (
+const Header = () => (
   <header
     style={{
       background: primary,
-      marginBottom,
-      height,
+      marginBottom: "1.45rem",
     }}
   >
     <Container

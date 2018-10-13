@@ -4,11 +4,11 @@ import { Container } from "semantic-ui-react";
 
 import { primary } from "../utils/colors";
 
-const Footer = ({ height }) => (
+const Footer = () => (
   <footer
     style={{
       background: primary,
-      height,
+      marginTop: "1.45rem",
     }}
   >
     <Container
@@ -17,9 +17,11 @@ const Footer = ({ height }) => (
       }}
     >
       <nav>
-        <li>
-          <Link to="/contacts">Kontakty</Link>
-        </li>
+        <ul>
+          <li>
+            <Link to="/contacts">Kontakty</Link>
+          </li>
+        </ul>
       </nav>
       Copyright &copy; {new Date().getFullYear()} sisky.cz
     </Container>

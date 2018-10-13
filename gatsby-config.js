@@ -6,6 +6,8 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-typescript",
     "gatsby-plugin-less",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-csv",
       options: {
@@ -29,6 +31,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/data`,
         name: "print",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/images`,
+        name: "images",
       },
     },
     "gatsby-plugin-offline",

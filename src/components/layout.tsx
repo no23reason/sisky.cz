@@ -18,11 +18,11 @@ const Layout: React.SFC<{ title: string }> = ({ children, title }) => (
     >
       <html lang="en" />
     </Helmet>
-    <Header height="6rem" marginBottom="1.45rem" />
-    <Container style={{ minHeight: "calc(100vh - 11.45rem)" }}>
+    <Header />
+    <Container style={{ minHeight: "85vh" }}>
       <main>{children}</main>
     </Container>
-    <Footer height="4rem" />
+    <Footer />
   </>
 );
 
