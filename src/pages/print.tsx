@@ -7,7 +7,7 @@ import { parsePrintData } from "../utils/print";
 import PriceCalculator from "../components/print/priceCalculator/priceCalculator";
 
 const Print = () => (
-  <Layout>
+  <Layout title="Tisk">
     <StaticQuery
       query={graphql`
         query Print {

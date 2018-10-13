@@ -6,13 +6,13 @@ import Layout from "../components/layout";
 import ContactItem from "../components/contacts/contactItem";
 
 const Contacts = () => (
-  <Layout>
-    <Header>Kontakt</Header>
+  <Layout title="Kontakty">
+    <Header>Kontakty</Header>
     <Grid columns={2} stackable>
       <Grid.Row>
         <Grid.Column>
           <Segment>
-            <Header subheader>Produkce</Header>
+            <Header>Produkce</Header>
             <ContactItem
               name="Luděk Lopour"
               email="lopour@sisky.cz"
@@ -28,7 +28,7 @@ const Contacts = () => (
         </Grid.Column>
         <Grid.Column>
           <Segment>
-            <Header subheader>Grafika</Header>
+            <Header>Grafika</Header>
             <ContactItem email="grafika@sisky.cz" phone="+420 604 433 777" />
           </Segment>
         </Grid.Column>
@@ -36,7 +36,7 @@ const Contacts = () => (
       <Grid.Row>
         <Grid.Column>
           <Segment>
-            <Header subheader>Kancelář a tisk</Header>
+            <Header>Kancelář a tisk</Header>
             <List>
               <List.Item
                 icon="phone"
@@ -63,7 +63,7 @@ const Contacts = () => (
         </Grid.Column>
         <Grid.Column>
           <Segment>
-            <Header subheader>Sídlo</Header>
+            <Header>Sídlo</Header>
             <List>
               <List.Item
                 icon="building"

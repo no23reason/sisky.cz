@@ -1,14 +1,18 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const Header = ({ siteTitle }) => (
-  <div
+import { primary } from "../utils/colors";
+import { Container } from "semantic-ui-react";
+
+const Header = ({ height, marginBottom }) => (
+  <header
     style={{
-      background: "rebeccapurple",
-      marginBottom: "1.45rem",
+      background: primary,
+      marginBottom,
+      height,
     }}
   >
-    <div
+    <Container
       style={{
         margin: "0 auto",
         maxWidth: 960,
@@ -23,11 +27,11 @@ const Header = ({ siteTitle }) => (
             textDecoration: "none",
           }}
         >
-          {siteTitle}
+          sisky.cz
         </Link>
       </h1>
-    </div>
-  </div>
+    </Container>
+  </header>
 );
 
 export default Header;
